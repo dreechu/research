@@ -28,9 +28,9 @@ LABEL       org.opencontainers.image.source="https://github.com/pterodactyl/yolk
 LABEL       org.opencontainers.image.licenses=MIT
 
 RUN         apk add --update --no-cache cmake make ca-certificates curl ffmpeg g++ gcc git openssl sqlite tar tzdata \
+	&& apt-get -y update && apt-get install -y libmagic-dev && apt-get install -y ffmpeg
 	&& adduser -D -h /home/container container
-RUN apt-get -y update && apt-get install -y libmagic-dev && apt-get install -y ffmpeg
-
+	
 USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
