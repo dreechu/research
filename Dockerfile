@@ -4,7 +4,7 @@ LABEL       author="Michael Parker" maintainer="parker@pterodactyl.io"
 
 RUN         apt update \
             && apt -y install git gcc g++ ca-certificates dnsutils curl iproute2 ffmpeg procps tini \
-			&& apt-get -y update && apt-get install -y libmagic-dev && apt-get install -y ffmpeg
+			&& apt-get -y update && apt-get install -y libmagic-dev && apt-get install -y ffmpeg \
             && useradd -m -d /home/container container
 
 USER        container
